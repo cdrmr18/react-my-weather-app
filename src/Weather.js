@@ -1,5 +1,6 @@
 import React from "react";
 import "./Weather.css";
+import ReactAnimatedWeather from 'react-animated-weather';
 
 export default function Weather() {
   let weatherData = {
@@ -61,7 +62,12 @@ export default function Weather() {
                 <a href="/">°C</a> | <a href="/">°F</a>
               </span>
             </div>
-            <img src={weatherData.imgUrl} alt="" />
+                <ReactAnimatedWeather
+                    icon='CLEAR_DAY'
+                    color='green'
+                    size={50}
+                    animate={true}
+                />
           </div>
         </div>
       </div>
