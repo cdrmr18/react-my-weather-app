@@ -1,0 +1,46 @@
+#weatherCondition {
+  text-transform: capitalize;
+}
+#current-temp {
+  font-size: 50px;
+  font-weight: 400;
+  position: relative;
+  top: 5px;
+  left: 55px;
+}
+#icon {
+  margin: 0 auto;
+  position: relative;
+  bottom: 28px;
+  left: 30px;
+  width: 135px;
+}
+.overview li {
+  line-height: 5px;
+}
+.weather-alt-info {
+  position: relative;
+  top: 20px;
+}
+.temp-box {
+  text-align: center;
+}
+.week_clouds {
+  font-size: 35px;
+}
+.forecast-images {
+  width: 70px;
+  margin-left: -15px;
+}
+.forecast-time h3 {
+  font-size: 16px;
+}
+.degrees {
+  position: relative;
+  top: 20px;
+  left: 65px;
+}
+.Weather {
+  max-width: 500px;
+  margin: 30px auto;
+}
