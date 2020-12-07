@@ -14,26 +14,30 @@ export default function Weather() {
   };
   return (
     <div className="Weather">
+      {/* Search for city form */}
       <form className="mb-3">
-        <div className="row">
-          <div className="col-9">
+        <div className ="row">
+          <div className ="col-9">
             <input
               type="search"
               placeholder="Enter city"
-              className="form-control"
+              className="form-control w-100"
+              autoFcous="on"
               autoComplete="off"
             />
-          </div>
-          <div className="col-3">
+            </div>
+          <div className ="col-3">
             <input
               type="submit"
               value="Search"
-              className="btn btn-primary w-100"
+              className="btn btn-light w-100"
             />
           </div>
         </div>
       </form>
-      <div className="overview">
+
+      {/* Weather overview showcasing city, date, and weather description */}
+      <div className="weather-overview">
         <h1>{weatherData.city}</h1>
         <ul>
           <li>
@@ -45,34 +49,36 @@ export default function Weather() {
         </ul>
       </div>
 
+      {/* List showing humidity and wind speed */}
       <div className="row">
-        <div className="col-4 weather-box">
+        <div className="col-6">
           <div>
-            <ul className="weather-alt-info">
+            <ul className="weather-description">
               <li>Humidity: {weatherData.humidity}</li>
               <li>Wind: {weatherData.wind}</li>
             </ul>
           </div>
         </div>
-        <div className="col-8">
-          <div className="clearfix temp-box">
+        <div className="col-6">
+          <div className="clearfix temperature-icon-display">
+            {/* weather icon */}
             <div className="float-left">
-              <strong>{weatherData.temp}</strong>
-              <span className="units">
-                <a href="/">°C</a> | <a href="/">°F</a>
-              </span>
+              <ReactAnimatedWeather
+                icon= 'RAIN'
+                color= 'PINK'
+                size= {80}
+                animate= {true}
+              />
             </div>
-                <ReactAnimatedWeather
-                    icon='CLEAR_DAY'
-                    color='green'
-                    size={50}
-                    animate={true}
-                />
+            {/* temperature and units */}
+            <div className="float-left">
+              <span className="temp">{weatherData.temp}</span>
+              <span className="unit"> °C</span> | <span className="unit"> °F</span>
+            </div >
           </div>
         </div>
-      </div>
+      </div>  
 
-      <div className="row"></div>
     </div>
   );
 }

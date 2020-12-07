@@ -1,46 +1,36 @@
-#weatherCondition {
-  text-transform: capitalize;
-}
-#current-temp {
-  font-size: 50px;
-  font-weight: 400;
-  position: relative;
-  top: 5px;
-  left: 55px;
-}
-#icon {
-  margin: 0 auto;
-  position: relative;
-  bottom: 28px;
-  left: 30px;
-  width: 135px;
-}
-.overview li {
-  line-height: 5px;
-}
-.weather-alt-info {
-  position: relative;
-  top: 20px;
-}
-.temp-box {
+.temperature-box {
   text-align: center;
 }
-.week_clouds {
-  font-size: 35px;
-}
-.forecast-images {
-  width: 70px;
-  margin-left: -15px;
-}
-.forecast-time h3 {
-  font-size: 16px;
-}
-.degrees {
-  position: relative;
-  top: 20px;
-  left: 65px;
+.weather-overview li {
+  line-height: 5px;
 }
 .Weather {
   max-width: 500px;
   margin: 30px auto;
+}
+.Weather h1 {
+  font-size: 24px;
+  font-weight: 100;
+  height: 27px;
+  line-height: 28px;
+}
+.Weather ul {
+  margin: 0;
+  padding: 0;
+}
+.Weather li {
+  list-style-type: none;
+  font-size: 16px;
+  font-weight: 100;
+  margin: 0 0 30px 15px;
+  margin: 0;
+  padding: 0;
+}
+.Weather .temp {
+  font-weight: bold;
+  font-size: 64px;
+  margin-left: 16px;
+  line-height: 72px;
+}
+.Weather unit {
 }
