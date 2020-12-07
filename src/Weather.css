@@ -30,7 +30,12 @@
   font-weight: bold;
   font-size: 64px;
   margin-left: 16px;
-  line-height: 72px;
+  line-height: 62px;
 }
-.Weather unit {
+.Weather .unit {
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  top: -32px;
+  margin-left: 5px;
 }
