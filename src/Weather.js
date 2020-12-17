@@ -2,12 +2,20 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import ReactAnimatedWeather from 'react-animated-weather';
+import FormattedDate from './FormattedDate';
 
 export default function Weather() {
   const [ready, setReady] = useState(false);
-  const [temperature, setTemperature] = useState(null);
+  const [weather, setWeather] = useState({});
   function handleResponse(response) {
-    setTemperature(Math.round(response.data.main.temp));
+    setWeather({
+      temperature: Math.round(response.data.main.temp),
+      wind: Math.round(response.data.wind.speed),
+      city: response.data.name,
+      date: new Date(response.data.dt * 1000),
+      humidity: response.data.main.humidity,
+      description: response.data.weather[0].description
+    });
     setReady(true);
   }
 
@@ -22,7 +30,7 @@ export default function Weather() {
                 type="search"
                 placeholder="Enter city"
                 className="form-control w-100"
-                autoFcous="on"
+                autoFocus="on"
                 autoComplete="off"
               />
               </div>
@@ -38,13 +46,13 @@ export default function Weather() {
   
         {/* Weather overview showcasing city, date, and weather description */}
         <div className="weather-overview">
-          <h1>Berlin</h1>
+          <h1>{weather.city}</h1>
           <ul>
             <li>
-              <p>Dec 6 2020</p>
+              < FormattedDate date={weather.date} />
             </li>
             <li>
-              <p>Cloudy</p>
+              {weather.description}
             </li>
           </ul>
         </div>
@@ -55,8 +63,8 @@ export default function Weather() {
           <div className="col-4">
             <div>
               <ul className="weather-description">
-                <li>Humidity: </li>
-                <li>Wind: </li>
+                <li>Humidity: {weather.humidity}</li>
+                <li>Wind: {weather.wind}</li>
               </ul>
             </div>
           </div>
@@ -74,8 +82,8 @@ export default function Weather() {
               </div>
             </div>
               {/* temperature and units */}
-            <div className="float-left">
-              <span className="temp">{temperature}</span>
+            <div className="float-right">
+              <span className="temp">{weather.temperature}</span>
               <span className="unit"> °F </span>  <span className="unit">| °C</span>
             </div >
             </div>
