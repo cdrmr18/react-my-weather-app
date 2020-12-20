@@ -2,37 +2,44 @@ import React, { useState } from 'react';
 
 export default function WeatherTemperature(props) {
     const [unit, setUnit] = useState('faren');
-<<<<<<< HEAD
-    function convertToCelcius(event) {
-            event.preventDefault();
-            setUnit();
-            // (32°F − 32) × 5/9 = 0°C
-        }
+
+    function showCelcius(event) {
+        event.preventDefault();
+        setUnit('celsius');
+    }
+    function showFaren(event) {
+        event.preventDefault();
+        setUnit('faren')
+    }
 
     if (unit === "faren") {
-=======
-    
-    if (unit === "faren") {
-        function convertToCelcius() {
-            // (32°F − 32) × 5/9 = 0°C
-        }
->>>>>>> parent of d9027dd... Revert "Hid API Key"
         return (
         <div className="WeatherTemperature">
-            <span className="temp">{props.faren}</span>
-            <span className="unit"> °F | <a href="/" onClick={convertToCelcius}>°C</a></span>
+            <span className="temp">
+                {props.faren}
+            </span>
+            <span className="unit"> 
+                °F {" "} 
+                <a href="/" onClick={showCelcius}>
+                | °C
+                </a>
+            </span>
         </div>
     );
     } else {
-<<<<<<< HEAD
+        let celsius = Math.round(((props.faren) - 32) * 5/9);
         return (
-        <div className="WeatherTemperature">
-            <span className="temp">{props.faren}</span>
-            <span className="unit"> <a href="/" onClick={convertToCelcius}>°F </a> | °C</span>
-        </div>
-=======
-
->>>>>>> parent of d9027dd... Revert "Hid API Key"
-    }
-    
+            <div className="WeatherTemperature">
+                <span className="temp">
+                    {celsius}
+                </span>
+                <span className="unit"> 
+                    <a href="/" onClick={showFaren}> 
+                    °F {" "}
+                    </a> 
+                   | °C
+                   </span>
+            </div>
+        );
+    }  
 }
