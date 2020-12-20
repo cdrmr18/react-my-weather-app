@@ -1,6 +1,6 @@
 import React from "react";
-import FormattedDate from './FormattedDate'
-import ReactAnimatedWeather from 'react-animated-weather';
+import FormattedDate from './FormattedDate';
+import WeatherIcon from './WeatherIcon';
 
 export default function WeatherInfo(props) {
     return (
@@ -32,13 +32,14 @@ export default function WeatherInfo(props) {
                     <div className="clearfix temperature-icon-display">
                     {/* weather icon */}
                     
-                    <div className="float-left">
-                        <WeatherIcon code={props.data.icon}/>  
-                    </div>
-                    {/* temperature and units */}
-                    <div className="float-right">
-                        <span className="temp">{props.data.temperature}</span>
-                        <span className="unit"> °F </span>  <span className="unit">| °C</span>
+                        <div className="float-left">
+                            <WeatherIcon code={props.data.icon}/>  
+                        </div>
+                        {/* temperature and units */}
+                        <div className="float-right">
+                            <span className="temp">{props.data.temperature}</span>
+                            <span className="unit"> °F </span>  <span className="unit">| °C</span>
+                        </div>
                     </div>
                 </div>
             </div>
