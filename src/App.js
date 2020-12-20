@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather />
+        <Weather defaultCity="London"/>
         <footer>
           <p><a href="https://github.com/cdrmr18/react-my-weather-app">Open-source code</a> by Kathy Tavia</p>
         </footer>
