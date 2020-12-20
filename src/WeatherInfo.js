@@ -31,13 +31,9 @@ export default function WeatherInfo(props) {
                 <div className="col-8">
                     <div className="clearfix temperature-icon-display">
                     {/* weather icon */}
-                        <div className="float-left">
-                            <ReactAnimatedWeather
-                            icon= 'RAIN'
-                            color= 'PINK'
-                            size= {80}
-                            animate= {true}
-                            /></div>
+                    
+                    <div className="float-left">
+                        <WeatherIcon code={props.data.icon}/>  
                     </div>
                     {/* temperature and units */}
                     <div className="float-right">
