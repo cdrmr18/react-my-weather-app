@@ -5,8 +5,8 @@ body {
   font-family: arial, sans-serif;
   color: rgb(138, 79, 112);
 }
-.App {
-  max-width: 600px;
+.App .container {
+  max-width: 60%;
   margin: 30px auto;
   padding: 20px;
   border-radius: 5px;
@@ -14,8 +14,8 @@ body {
   box-shadow: 3px 7px 5px rgba(0, 0, 0, 0.1);
 }
 .App footer p {
-  position: absolute;
-  bottom: -48px;
+  width: 60%;
+  margin: 0 auto;
 }
 a {
   color: rgb(117, 39, 189);
