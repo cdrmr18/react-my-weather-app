@@ -5,11 +5,11 @@ import WeatherTemperature from './WeatherTemperature'
 
 export default function WeatherInfo(props) {
     return (
-        <div className="WeatherInfo">
+        <div className="WeatherInfo ">
             {/* Weather overview showcasing city, date, and weather description */}
+            <h1>{props.data.city}</h1>
             <div className="row">
-                <div className="weather-overview col-6">
-                    <h1>{props.data.city}</h1>
+                <div className="col-6 px-0 d-flex justify-content-center">     
                     <ul>
                         <li>
                         < FormattedDate date={props} />
@@ -19,9 +19,9 @@ export default function WeatherInfo(props) {
                         </li>
                     </ul>
                 </div>
-                <div className="col-6 d-flex align-items-end pl-0">
+                <div className="col-6 d-flex align-items-end d-flex justify-content-center px-0">
                     <div>
-                    <ul className="weather-description">
+                    <ul>
                         <li>Humidity: {props.data.humidity}</li>
                         <li>Wind: {props.data.wind}</li>
                     </ul>
